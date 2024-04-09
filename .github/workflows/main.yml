@@ -25,15 +25,12 @@ jobs:
       run: |
         git config user.name MisaelMa
         git config user.email amisael.amir.misael@gmail.com
-  
-    - name: Incrementar versión
-      run: npm version patch
-
-    - name: Commit y push cambios
-      run: |
-        git add package.json package-lock.json
-        git commit -m "Incrementar versión"
-        git push origin main
+        
+    - name: Github
+      run: npm run semantic-release
+      env: 
+        NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
+        GITHUB_TOKEN: ${{ secrets.GIT_TOKEN }}
 
     - name: Publicar paquete
       run: npm publish --access public

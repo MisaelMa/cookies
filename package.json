@@ -13,7 +13,9 @@
         "build": "tsdx build",
         "lint": "tsdx lint",
         "size": "size-limit",
-        "analyze": "size-limit --why"
+        "commit": "git-cz",
+        "analyze": "size-limit --why",
+        "semantic-release": "semantic-release --branches main"
     },
     "dependencies": {
         "@types/request": "^2.48.12",
@@ -31,6 +33,7 @@
     },
     "devDependencies": {
         "@types/node": "^18.17.0",
+        "semantic-release": "^23.0.7",
         "tsdx": "^0.14.1",
         "vitest": "^1.4.0"
     },
