@@ -68,9 +68,5 @@
             "path": "dist/chrome-cookies-secure-ts.esm.js",
             "limit": "10 KB"
         }
-    ],
-    "repository": {
-        "type": "git",
-        "url": "https://github.com/MisaelMa/cookies.git"
-    }
+    ]
 }
