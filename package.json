@@ -8,6 +8,10 @@
         "dist",
         "src"
     ],
+    "publishConfig": {
+        "access": "public"
+      },
+    "private": false,
     "scripts": {
         "start": "tsdx watch",
         "build": "tsdx build",
