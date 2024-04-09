@@ -18,7 +18,7 @@ function decrypt(key: Buffer, encryptedData: string ) {
     decipher.setAutoPadding(false);
 
     encryptedData = encryptedData.slice(3);
-
+    // @ts-ignore
     decoded = decipher.update(encryptedData);
 
     final = decipher.final();
