@@ -1,0 +1,64 @@
+{
+    "version": "0.0.1",
+    "license": "MIT",
+    "name": "@chrome.js/cookies",
+    "main": "dist/index.js",
+    "typings": "dist/index.d.ts",
+    "files": [
+        "dist",
+        "src"
+    ],
+    "scripts": {
+        "start": "tsdx watch",
+        "build": "tsdx build",
+        "lint": "tsdx lint",
+        "size": "size-limit",
+        "analyze": "size-limit --why"
+    },
+    "dependencies": {
+        "@types/request": "^2.48.12",
+        "@types/tldjs": "^2.3.4",
+        "@types/tough-cookie": "^4.0.5",
+        "request": "^2.88.0",
+        "sqlite3": "^5.0.7",
+        "tldjs": "^1.5.1",
+        "tough-cookie": "^2.3.4",
+        "tslib": "^2.6.2"
+    },
+    "optionalDependencies": {
+        "keytar": "^7.9.0",
+        "win-dpapi": "^1.1.0"
+    },
+    "devDependencies": {
+        "@types/node": "^18.17.0",
+        "vitest": "^1.4.0"
+    },
+    "os": [
+        "darwin",
+        "linux",
+        "win32"
+    ],
+    "husky": {
+        "hooks": {
+            "pre-commit": "tsdx lint"
+        }
+    },
+    "prettier": {
+        "printWidth": 80,
+        "semi": true,
+        "singleQuote": true,
+        "trailingComma": "es5"
+    },
+    "author": "MisaelMa",
+    "module": "dist/chrome-cookies-secure-ts.esm.js",
+    "size-limit": [
+        {
+            "path": "dist/chrome-cookies-secure-ts.cjs.production.min.js",
+            "limit": "10 KB"
+        },
+        {
+            "path": "dist/chrome-cookies-secure-ts.esm.js",
+            "limit": "10 KB"
+        }
+    ]
+}

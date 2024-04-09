@@ -1,0 +1,38 @@
+name: Incrementar versión y publicar
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  release:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout código
+      uses: actions/checkout@v2
+
+    - name: Configurar Node.js
+      uses: actions/setup-node@v2
+      with:
+        node-version: '18.x'
+
+    - name: Instalar dependencias
+      run: npm install
+
+    - name: Incrementar versión
+      run: npm version patch
+
+    - name: Commit y push cambios
+      run: |
+        git config --local user.email "action@github.com"
+        git config --local user.name "GitHub Action"
+        git add package.json package-lock.json
+        git commit -m "Incrementar versión"
+        git push origin main
+
+    - name: Publicar paquete
+      run: npm publish --access public
+      env:
+        NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
